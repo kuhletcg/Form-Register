@@ -15,6 +15,10 @@ constructor(props) {
     }
     this.handleSubmit= this.handleSubmit.bind(this)
 }
+
+// first handleSubmit => {
+//     this.setState
+// };
 firsthandler = (event) => {
     this.setState({
         firstName: event.target.value
@@ -76,11 +80,12 @@ render() {
 
        <label>age : </label> 
    <input type="text" value={this.state.age} onChange={this.agehandler} placeholder="Age..."/> <br />           
-
+{/* 
        <label>firstName : </label> 
-   <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..."/> <br />           
+   <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..."/> <br />            */}
+   
 
-
+<input type ="research" value="research" />
       <input type="submit" value="Submit" />     
 </form>
         </div>
