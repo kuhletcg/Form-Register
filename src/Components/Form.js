@@ -7,22 +7,14 @@ constructor(props) {
     super(props)
 
     this.state = {
-        Names: "Kuhle, Zinhle, John, Leonard, Bob",
-        surname: "",
+        firstName: "",
+        lastName: "",
         address: "",
         age: "",
-        ID: "",
-        allergie: "",
-    
-    },
-editSearchTerm = (e) => {
-    this.setState({editSearchTerm: e.target.value})
-}
-dynamicSearch = () => {
-    return this.names.filter(name => name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
-}
+        id: "",
+        allergy: "",
 
-    
+    }
     this.handleSubmit= this.handleSubmit.bind(this)
 }
 
@@ -58,24 +50,21 @@ idhandler = (event) => {
         id: event.target.value
     })
 }
-
-allergiehandler = (event) => {
+allergyhandler = (event) => {
     this.setState({
-        allergie: event.target.value
+        allergy: event.target.value
     })
 }
-
-
 handleSubmit = (event) => {
     alert(`${this.state.firstName} ${this.state.lastName} Registered Succeddfully !!`)
     console.log(this.state);
     this.setState({
-        Names: "Kuhle, Zinhle, John, Leonard, Bob",
-        surname: "",
+        firstName: "",
+        lastName: "",
         address: "",
         age: "",
-        allergie: "",
-
+        id: "",
+        allergy: "",
     })
     
     event.preventDefault()
@@ -87,7 +76,7 @@ render() {
 
             <form onSubmit={this.handleSubmit}>
                 <h1>User Registration</h1>
-<boby>
+
    <label>firstName : </label> 
    <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..."/> <br />           
         
@@ -101,25 +90,20 @@ render() {
        <label>age : </label> 
    <input type="text" value={this.state.age} onChange={this.agehandler} placeholder="Age..."/> <br />     
 
-   <label>id : </label> 
-   <input type="text" value={this.state.id} onChange={this.agehandler} placeholder="ID..."/> <br />     
+   
+       <label>id : </label> 
+   <input type="text" value={this.state.id} onChange={this.idhandler} placeholder="ID..."/> <br />   
 
    
-   <label>allergie : </label> 
-   <input type="text" value={this.state.allergie} onChange={this.agehandler} placeholder="Allergie..."/> <br />     
-
-   <input type= "text" value= {this.state.searchTerm} onChange={this.editSearchTerm} placeholder= 'Search for a name!'/>
-   <br></br>
-<h3>These are the important names:</h3>   
-<NamesContainer name = {this.dynamicSearch()}/>      
+       <label>allergy : </label> 
+   <input type="text" value={this.state.allergy} onChange={this.allergyhandler} placeholder="Allergy..."/> <br />         
 {/* 
-       <label>allirgies : </label> 
-   <input type="text" value={this.state.allergies} onChange={this.allergies} placeholder="Allegies..."/> <br />            */}
+       <label>firstName : </label> 
+   <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..."/> <br />            */}
    
 
-<input type ="search" value="Search" />
+{/* <input type ="search" value="search" /> */}
       <input type="submit" value="Submit" />     
-      </boby>
 </form>
         </div>
     );
