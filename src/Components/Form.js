@@ -11,6 +11,8 @@ constructor(props) {
         lastName: "",
         address: "",
         age: "",
+        ID: "",
+        allergie: "",
 
     }
     this.handleSubmit= this.handleSubmit.bind(this)
@@ -43,11 +45,19 @@ agehandler = (event) => {
     })
 }
 
-firsthandler = (event) => {
+idhandler = (event) => {
     this.setState({
-        firstName: event.target.value
+        id: event.target.value
     })
 }
+
+allergiehandler = (event) => {
+    this.setState({
+        allergie: event.target.value
+    })
+}
+
+
 handleSubmit = (event) => {
     alert(`${this.state.firstName} ${this.state.lastName} Registered Succeddfully !!`)
     console.log(this.state);
@@ -56,6 +66,8 @@ handleSubmit = (event) => {
         lastName: "",
         address: "",
         age: "",
+        allergie: "",
+
     })
     
     event.preventDefault()
@@ -67,7 +79,7 @@ render() {
 
             <form onSubmit={this.handleSubmit}>
                 <h1>User Registration</h1>
-
+<boby>
    <label>firstName : </label> 
    <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..."/> <br />           
         
@@ -79,14 +91,25 @@ render() {
 
 
        <label>age : </label> 
-   <input type="text" value={this.state.age} onChange={this.agehandler} placeholder="Age..."/> <br />           
+   <input type="text" value={this.state.age} onChange={this.agehandler} placeholder="Age..."/> <br />     
+
+   <label>id : </label> 
+   <input type="text" value={this.state.id} onChange={this.agehandler} placeholder="ID..."/> <br />     
+
+   
+   <label>allergie : </label> 
+   <input type="text" value={this.state.allergie} onChange={this.agehandler} placeholder="Allergie..."/> <br />     
+
+   
+         
 {/* 
-       <label>firstName : </label> 
-   <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..."/> <br />            */}
+       <label>allirgies : </label> 
+   <input type="text" value={this.state.allergies} onChange={this.allergies} placeholder="Allegies..."/> <br />            */}
    
 
-<input type ="research" value="research" />
+<input type ="search" value="Search" />
       <input type="submit" value="Submit" />     
+      </boby>
 </form>
         </div>
     );
