@@ -1,9 +1,16 @@
 boby {
-    background-color: cadetblue;
+color: rebeccapurple;
+background-attachment: fixed;
+background-image: -moz-radial-gradient();
 }
 h1{
     font-size: 38px;
-}
+    color: red;
+    background-color: aqua;
+    font-family: 'Titillium Web', sans-serif;
+
+ }
+
 input [type=text] {
     width: 30%;
     padding: 12px 20px;
@@ -24,11 +31,11 @@ input[type=address] {
     box-sizing: 8px;
     border: none;
     border-radius: 15px;
-    background-color: white;
+    background-color: rgb(255, 249, 249);
+    font-family: Arial, Helvetica, sans-serif;
 }
-
-input[type=submit] {
-    background-color:  #ddd;
+input[type=lastName] {
+    background-color: rgb(255, 249, 249);
     border: none;
     color: black;
     padding: 10px 20px;
@@ -39,4 +46,63 @@ input[type=submit] {
     border-radius: 16px;
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 2px;
+}
+
+input[type=address] {
+    background-color: rgb(255, 249, 249);
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 2px;
+}
+
+input[type=age] {
+    background-color: rgb(255, 249, 249);
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 2px;
+}
+
+input[type=submit] {
+    background-color:  blue;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 2px;
+}
+.contatiner {
+    background-color: antiquewhite;
+    border-style: hidden;
+    border-radius: 15px;
+    padding: 18;
+    text-align: center;
+    box-shadow: 0 8px 6px black;
+}
+
+@media screem and (max-width:900px) {
+    .main-contianer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-eventy;
+    }
 }
