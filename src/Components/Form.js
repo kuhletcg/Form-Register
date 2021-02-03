@@ -7,14 +7,22 @@ constructor(props) {
     super(props)
 
     this.state = {
-        firstName: "",
-        lastName: "",
+        Names: "Kuhle, Zinhle, John, Leonard, Bob",
+        surname: "",
         address: "",
         age: "",
         ID: "",
         allergie: "",
+    
+    },
+editSearchTerm = (e) => {
+    this.setState({editSearchTerm: e.target.value})
+}
+dynamicSearch = () => {
+    return this.names.filter(name => name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+}
 
-    }
+    
     this.handleSubmit= this.handleSubmit.bind(this)
 }
 
@@ -62,8 +70,8 @@ handleSubmit = (event) => {
     alert(`${this.state.firstName} ${this.state.lastName} Registered Succeddfully !!`)
     console.log(this.state);
     this.setState({
-        firstName: "",
-        lastName: "",
+        Names: "Kuhle, Zinhle, John, Leonard, Bob",
+        surname: "",
         address: "",
         age: "",
         allergie: "",
@@ -100,8 +108,10 @@ render() {
    <label>allergie : </label> 
    <input type="text" value={this.state.allergie} onChange={this.agehandler} placeholder="Allergie..."/> <br />     
 
-   
-         
+   <input type= "text" value= {this.state.searchTerm} onChange={this.editSearchTerm} placeholder= 'Search for a name!'/>
+   <br></br>
+<h3>These are the important names:</h3>   
+<NamesContainer name = {this.dynamicSearch()}/>      
 {/* 
        <label>allirgies : </label> 
    <input type="text" value={this.state.allergies} onChange={this.allergies} placeholder="Allegies..."/> <br />            */}
