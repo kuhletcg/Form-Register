@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './CSS/todo.css'
+import Name from './Form.js'
 
 
 class Form extends Component {
@@ -13,7 +14,7 @@ constructor(props) {
         age: "",
         id: "",
         allergy: "",
-
+       
     }
     this.handleSubmit= this.handleSubmit.bind(this)
 }
@@ -65,10 +66,14 @@ handleSubmit = (event) => {
         age: "",
         id: "",
         allergy: "",
+  
     })
     
     event.preventDefault()
 }
+
+
+
 
 render() {
     return (
@@ -102,7 +107,7 @@ render() {
    <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..."/> <br />            */}
    
 
-{/* <input type ="search" value="search" /> */}
+<input type ="search" value="search" />
       <input type="submit" value="Submit" />     
 </form>
         </div>
