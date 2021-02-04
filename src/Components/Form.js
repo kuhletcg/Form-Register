@@ -16,49 +16,22 @@ constructor(props) {
         allergy: "",
        
     }
-    this.handleSubmit= this.handleSubmit.bind(this)
+    this.handleSubmit= this.handleSubmit.bind(this);
+    this.handlerChange= this.handlerChange.bind(this)
+}
+handlerChange(event) {
+    const {name, value} = event.target;
+    this.setState({ 
+    [name] : value
+        } 
+    );
 }
 
-// first handleSubmit => {
-//     this.setState
-// };
-firsthandler = (event) => {
-    this.setState({
-        firstName: event.target.value
-    })
-}
 
-lasthandler = (event) => {
-    this.setState({
-        lastName: event.target.value
-    })
-}
 
-addresshandler = (event) => {
-    this.setState({
-        address: event.target.value
-    })
-}
-
-agehandler = (event) => {
-    this.setState({
-        age: event.target.value
-    })
-}
-
-idhandler = (event) => {
-    this.setState({
-        id: event.target.value
-    })
-}
-allergyhandler = (event) => {
-    this.setState({
-        allergy: event.target.value
-    })
-}
 handleSubmit = (event) => {
+    event.preventDefault()
     alert(`${this.state.firstName} ${this.state.lastName} Registered Succeddfully !!`)
-    console.log(this.state);
     this.setState({
         firstName: "",
         lastName: "",
@@ -66,10 +39,10 @@ handleSubmit = (event) => {
         age: "",
         id: "",
         allergy: "",
-  
+        
     })
     
-    event.preventDefault()
+    console.log(this.state)
 }
 
 
@@ -83,25 +56,25 @@ render() {
                 <h1>User Registration</h1>
 
    <label>firstName : </label> 
-   <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..."/> <br />           
+   <input type="text" value={this.state.firstName} name= "firstName" onChange={this.handlerChange} placeholder="FirstName..."/> <br />           
         
    <label>lastName : </label> 
-   <input type="text" value={this.state.laststName} onChange={this.lasthandler} placeholder="LastName..."/> <br />           
+   <input type="text" value={this.state.lastName} name="lastName" onChange={this.handlerChange} placeholder="LastName..."/> <br />           
 
    <label>address : </label> 
-   <input type="text" value={this.state.address} onChange={this.addresshandler} placeholder="Address..."/> <br />           
+   <input type="text" value={this.state.address} name= "address" onChange={this.handlerChange} placeholder="Address..."/> <br />           
 
 
        <label>age : </label> 
-   <input type="text" value={this.state.age} onChange={this.agehandler} placeholder="Age..."/> <br />     
+   <input type="text" value={this.state.age} name="age" onChange={this.handlerChange} placeholder="Age..."/> <br />     
 
    
        <label>id : </label> 
-   <input type="text" value={this.state.id} onChange={this.idhandler} placeholder="ID..."/> <br />   
+   <input type="text" value={this.state.id} name= "id" onChange={this.handlerChange} placeholder="ID..."/> <br />   
 
    
        <label>allergy : </label> 
-   <input type="text" value={this.state.allergy} onChange={this.allergyhandler} placeholder="Allergy..."/> <br />         
+   <input type="text" value={this.state.allergy} name= "allergy" onChange={this.handlerChange} placeholder="Allergy..."/> <br />         
 {/* 
        <label>firstName : </label> 
    <input type="text" value={this.state.firstName} onChange={this.firsthandler} placeholder="FirstName..."/> <br />            */}
